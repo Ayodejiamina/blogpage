@@ -1,0 +1,53 @@
+.caros img{
+  width: 100% 100%;
+  height: 450px;
+}
+.det img{
+  width: 100%;
+  height: 450px;
+}
+.carost{
+  color: black;
+}
+ul li {
+  transition: ease-out 0.3s;
+  box-shadow: inset 0 0 0 0 rgb(255, 213, 254);
+  outline: none;
+  margin: 10px;
+}
+li:hover{
+  box-shadow: inset 50px 0 0 0 rgb(94, 250, 250)
+}
+.err h2{
+  font-size: 80px;
+}
+.foot{
+  background: linear-gradient(to bottom, #33ccff 0%, #cc33ff 100%);
+}
+.icons i{
+   color: white;
+   background-color: black;
+   padding: 5px;
+   border-radius: 50%;
+}
+.fieldcon{
+  background-color:rgba(170, 167, 167, 0.096);
+  width: 75%;
+  margin: auto;
+}
+.spans{
+  color: white;
+  font-size: 20px;
+}
+legend{
+  color: white;
+}
+fieldset{ display: block;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding-top: 0.35em;
+  padding-bottom: 0.625em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  border: 2px groove (internal value);
+}
