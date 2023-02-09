@@ -42,8 +42,10 @@ function Blog_details() {
        pardata.map((value,index)=>{
           if(value.id == id){
            return(
-            <div className='container-fluid det'>
-            <img src='https://images.unsplash.com/photo-1603217041431-9a99375beab0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGJsb2dnZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60' alt="" />
+            <div className='container-fluid'>
+            <div className='det'>
+            {/* <img src='https://images.unsplash.com/photo-1603217041431-9a99375beab0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGJsb2dnZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60' alt="" /> */}
+            </div>
             <div>
               <h2 className='text-center'>{value.title}</h2>
               <p>{value.body}</p>

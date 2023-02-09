@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 function Blogcom() {
   const [datas, setDatas] = useState([]);
-  const [user, setUser] = useState("");
+  const [activeUser, setActiveUser] = useState("");
 
   const url = "https://dummyjson.com/posts";
   // console.log(url)
@@ -17,7 +17,16 @@ function Blogcom() {
   }
   useEffect(() => {
     BlogData();
+    statusValidate();
   }, []);
+
+  const statusValidate = () => {
+    let activeuser = JSON.parse(localStorage.getItem("activeuser"));
+    if (activeuser) {
+      setActiveUser(activeuser);
+    }
+  };
+
   return (
     <div className="row justify-content-center my-5">
       <h2 className="text-center">Blog Posts</h2>
@@ -33,9 +42,15 @@ function Blogcom() {
                 <h4>{value.title}</h4>
                 <p>{value.body.slice(0, 80)}...</p>
                 <div className="text-end">
-                  <Link to={`/blog_details/${value.id}`}>
-                    Read More<i className="fas fa-arrow-right"></i>
-                  </Link>
+                  {activeUser ? (
+                    <Link to={`/blog_details/${value.id}`}>
+                      Read More<i className="fas fa-arrow-right ps-1"></i>
+                    </Link>
+                  ) : (
+                    <Link to={`/register`}>
+                      Read More<i className="fas fa-arrow-right ps-1"></i>
+                    </Link>
+                  )}
                 </div>
               </div>
             );

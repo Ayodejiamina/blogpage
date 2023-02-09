@@ -11,33 +11,33 @@ function Login() {
 
   const [pwd,setPwd] = useState('');
   const [emails,setEmail] = useState('');
-  const [loginStatus,setLoginStatus] = useState({
-    name : ""
-  });
+  const [loginStatus,setLoginStatus] = useState('');
 
 
   const LoginData = (e)=>{
     e.preventDefault()
     const LoggedData = localStorage.getItem('data')
-    
+    console.log(emails)
+    console.log(pwd)
+
     if(LoggedData){
       try{
         const datas = JSON.parse(LoggedData);
         datas.map((value,index) =>{
-          if(value.email === emails && value.password === pwd ){
+      
+      
+          if(emails == value.email && pwd == value.password ){
             // let status = true;
             // let name = value.name
             
-            setLoginStatus({...loginStatus, ['name'] : value.name})
-            localStorage.setItem("activeuser", JSON.stringify(loginStatus))
-            navigator('/blog_details')
+            setLoginStatus({'name' : value.name})
+            localStorage.setItem("activeuser", JSON.stringify({'name' : value.name, active: true}))
+            navigator('/')
           }else{
             document.getElementById('pwderr').innerHTML = "Incorrect Email or Password"
             document.getElementById('pwderr').style.color = "red"
           }
           })
-        console.log(datas.email)
-        console.log(datas.password)
 
       }
       catch(error) {
